@@ -14,18 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-try {
 
-    \DB::connection()->getPdo();
-  
-  } catch (\Exception $e) {
-  
-   // 接続エラーの処理
-   return view('welcome');
-  
-  }
 
 Route::get('/', function () {
+    try {
+
+        \DB::connection()->getPdo();
+      
+      } catch (\Exception $e) {
+      
+       // 接続エラーの処理
+       return view('welcome2');
+      
+      }
     return view('welcome');
 });
 
