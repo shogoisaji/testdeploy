@@ -14,6 +14,13 @@
         {
             "src": "package.json",
             "use": "@vercel/node"
+        },
+        {
+            "src": "package.json",
+            "use": "@vercel/node",
+            "config": {
+                "buildCommand": "npm run build"
+            }
         }
     ],
     "routes": [
@@ -30,11 +37,8 @@
             "dest": "/public/robots.txt"
         },
         {
-            "src": "package.json",
-            "use": "@vercel/node",
-            "config": {
-                "buildCommand": "npm run build"
-            }
+            "src": "/(.*)",
+            "dest": "/api/index.php"
         }
     ],
     "env": {
