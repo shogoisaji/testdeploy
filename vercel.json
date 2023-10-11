@@ -2,23 +2,6 @@
     "regions": [
         "hnd1"
     ],
-    "builds": [
-        {
-            "src": "package.json",
-            "use": "@vercel/node",
-            "config": {
-                "buildCommand": "npm run build"
-            }
-        },
-        {
-            "src": "/api/index.php",
-            "use": "vercel-php@0.6.0"
-        },
-        {
-            "src": "/public/**",
-            "use": "@vercel/static"
-        }
-    ],
     "routes": [
         {
             "src": "/build/assets/(.*)",
